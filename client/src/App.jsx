@@ -12,7 +12,7 @@ import BlogDetails from "./pages/blog/BlogDetails";
 import AddBlog from "./pages/blog/AddBlog";
 import EditBlog from "./pages/blog/EditBlog";
 import SingleBlogDetails from "./pages/SingleBlogDetails";
-import BlogByCategory from "./pages/blog/blogByCategory";
+import BlogByCategory from "./pages/blog/BlogByCategory";
 import SearchResult from "./pages/SearchResult";
 import Comments from "./pages/Comments";
 import User from "./pages/User";
