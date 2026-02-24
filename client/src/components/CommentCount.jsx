@@ -4,7 +4,7 @@ import { FaRegCommentAlt } from "react-icons/fa";
 
 export default function CommentCount({ props }) {
   const { data, loading, error } = useFetch(
-    `http://localhost:3000/api/comment/get-count/${props?.blogid}`,
+    `${import.meta.env.VITE_API_BASE_URL}/comment/get-count/${props?.blogid}`,
     {
       method: "GET",
       credentials: "include",

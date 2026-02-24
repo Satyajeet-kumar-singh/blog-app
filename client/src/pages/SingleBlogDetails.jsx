@@ -13,7 +13,7 @@ import RelatedBlog from "@/components/RelatedBlog";
 
 export default function SingleBlogDetails() {
   const { blog,category } = useParams();
-  const { data, loading, error } = useFetch(`http://localhost:3000/api/blog/get-blog/${blog}`,{
+  const { data, loading, error } = useFetch(`${import.meta.env.VITE_API_BASE_URL}/blog/get-blog/${blog}`,{
       method: "GET",
       credentials: "include",
     },[blog,category]);

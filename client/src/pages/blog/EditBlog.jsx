@@ -41,7 +41,7 @@ export default function EditBlog() {
     data: categoryData,
     loading,
     error,
-  } = useFetch(`http://localhost:3000/api/category/all-category`, {
+  } = useFetch(`${import.meta.env.VITE_API_BASE_URL}/category/all-category`, {
     method: "GET",
     credentials: "include",
   });
@@ -49,7 +49,7 @@ export default function EditBlog() {
    const {
     data: blogData,
     loading: blogLoading
-  } = useFetch(`http://localhost:3000/api/blog/edit/${blogid}`, {
+  } = useFetch(`${import.meta.env.VITE_API_BASE_URL}/blog/edit/${blogid}`, {
     method: "GET",
     credentials: "include",
   },[blogid]);
@@ -104,7 +104,7 @@ export default function EditBlog() {
       const formData = new FormData();
       formData.append("file", file);
       formData.append("data", JSON.stringify(values));
-      const response = await fetch(`http://localhost:3000/api/blog/update/${blogid}`,{
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/blog/update/${blogid}`,{
           method: "PUT",
           credentials: "include",
           body: formData,

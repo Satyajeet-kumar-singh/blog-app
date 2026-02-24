@@ -20,7 +20,7 @@ export default function GoogleLogin() {
         email: user.email,
         avatar: user.photoURL
       }
-      const response = await fetch(`http://localhost:3000/api/auth/google-login`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/google-login`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         credentials: "include",

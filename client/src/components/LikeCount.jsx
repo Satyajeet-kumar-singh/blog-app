@@ -9,7 +9,7 @@ export default function LikeCount({props}) {
   const [hasLiked,setHasLiked] = useState(false)
   const user = useSelector(state => state.user)
     const { data:blogLikeCount, loading, error } = useFetch(
-      `http://localhost:3000/api/blog-like/get-like/${props?.blogid}/${user && user.isLoggedIn ? user.user._id : ""}`,
+      `${import.meta.env.VITE_API_BASE_URL}/blog-like/get-like/${props?.blogid}/${user && user.isLoggedIn ? user.user._id : ""}`,
       {
         method: "GET",
         credentials: "include",
@@ -28,7 +28,7 @@ export default function LikeCount({props}) {
         if(!user.isLoggedIn){
           return Showtoast("error","please logged in")
         }
-        const response = await fetch(`http://localhost:3000/api/blog-like/do-like`,{
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/blog-like/do-like`,{
           method: "POST",
           credentials:"include",
           headers : {"Content-Type" : "application/json"},

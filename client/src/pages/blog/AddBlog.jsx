@@ -38,7 +38,7 @@ export default function AddBlog() {
     data: categoryData,
     loading,
     error,
-  } = useFetch(`http://localhost:3000/api/category/all-category`, {
+  } = useFetch(`${import.meta.env.VITE_API_BASE_URL}/category/all-category`, {
     method: "GET",
     credentials: "include",
   });
@@ -81,7 +81,7 @@ export default function AddBlog() {
       const formData = new FormData();
       formData.append("file", file);
       formData.append("data", JSON.stringify(newvalues));
-      const response = await fetch(`http://localhost:3000/api/blog/add`,{
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/blog/add`,{
           method: "POST",
           credentials: "include",
           body: formData,

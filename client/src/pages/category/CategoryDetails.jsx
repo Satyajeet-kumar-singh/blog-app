@@ -25,7 +25,7 @@ export default function CategoryDetails() {
       data: categoryData,
       loading,
       error,
-    } = useFetch(`http://localhost:3000/api/category/all-category`, {
+    } = useFetch(`${import.meta.env.VITE_API_BASE_URL}/category/all-category`, {
       method: "GET",
       credentials: "include",
     },[refresh]);
@@ -33,7 +33,7 @@ export default function CategoryDetails() {
     // console.log(categoryData?.category)
 
     const handleDelete=(id)=>{
-      const response = deleteData(`http://localhost:3000/api/category/delete/${id}`)
+      const response = deleteData(`${import.meta.env.VITE_API_BASE_URL}/category/delete/${id}`)
       if(response){
         setRefresh(!refresh)
         Showtoast("success","Data deleted")

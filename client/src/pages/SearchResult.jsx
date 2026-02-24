@@ -7,7 +7,7 @@ function SearchResult() {
     const [searchParams] = useSearchParams()
     const q = searchParams.get("q")
 
-    const {data: blogData,loading,error,} = useFetch(`http://localhost:3000/api/blog/search?q=${q}`,{
+    const {data: blogData,loading,error,} = useFetch(`${import.meta.env.VITE_API_BASE_URL}/blog/search?q=${q}`,{
         method: "GET",
         credentials: "include",
       });

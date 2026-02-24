@@ -35,7 +35,7 @@ export default function Topbar() {
   const handleClick=async()=>{
     // alert("hiiiii")
      try {
-          const response = await fetch(`http://localhost:3000/api/auth/logout`, {
+          const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/logout`, {
             method: "GET",
             credentials: "include",
           });

@@ -40,7 +40,7 @@ export default function AddCategory() {
 
   const onSubmit = async (values) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/category/add`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/category/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -34,7 +34,7 @@ export default function Profile() {
     data: userData,
     loading,
     error,
-  } = UseFetch(`http://localhost:3000/api/user/get-user/${user.user._id}`, {
+  } = UseFetch(`${import.meta.env.VITE_API_BASE_URL}/user/get-user/${user.user._id}`, {
     method: "GET",
     credentials: "include", 
   });
@@ -75,7 +75,7 @@ export default function Profile() {
       const formData = new FormData()
       formData.append("file",file)
       formData.append("data",JSON.stringify(values))
-      const response = await fetch(`http://localhost:3000/api/user/update-user/${userData.user._id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/user/update-user/${userData.user._id}`, {
         method: "PUT", 
         credentials: "include",
         body: formData,

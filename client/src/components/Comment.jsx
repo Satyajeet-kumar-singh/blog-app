@@ -35,7 +35,7 @@ export default function Comment({props}) {
   const onSubmit = async (values) => {
     try {
       const newValues = {...values,blogid:props.blogid,author:user.user._id}
-      const response = await fetch(`http://localhost:3000/api/comment/add`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/comment/add`, {
         method: "POST",
         credentials:"include",
         headers: {

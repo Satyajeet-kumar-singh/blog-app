@@ -27,7 +27,7 @@ export default function User() {
       data,
       loading,
       error,
-    } = useFetch(`http://localhost:3000/api/user/get-all-user`, {
+    } = useFetch(`${import.meta.env.VITE_API_BASE_URL}/user/get-all-user`, {
       method: "GET",
       credentials: "include",
     },[refresh]);
@@ -35,7 +35,7 @@ export default function User() {
     console.log("user",data)
 
     const handleDelete=async(id)=>{
-      const response = await deleteData(`http://localhost:3000/api/user/delete/${id}`)
+      const response = await deleteData(`${import.meta.env.VITE_API_BASE_URL}/user/delete/${id}`)
       if(response){
         setRefresh(!refresh)
         Showtoast("success","Data deleted")

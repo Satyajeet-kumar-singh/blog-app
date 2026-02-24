@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function Index() {
 
-  const {data: blogData,loading,error,} = useFetch(`http://localhost:3000/api/blog/blogs`,{
+  const {data: blogData,loading,error,} = useFetch(`${import.meta.env.VITE_API_BASE_URL}/blog/blogs`,{
         method: "GET",
         credentials: "include",
       });

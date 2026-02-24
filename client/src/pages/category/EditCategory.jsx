@@ -25,7 +25,7 @@ export default function EditCategory() {
         data: categoryData, 
         loading,
         error,
-      } = useFetch(`http://localhost:3000/api/category/show/${category_id}`, {
+      } = useFetch(`${import.meta.env.VITE_API_BASE_URL}/category/show/${category_id}`, {
         method: "GET",
         credentials: "include",
       },[category_id]);
@@ -62,7 +62,7 @@ export default function EditCategory() {
 
   const onSubmit = async (values) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/category/update/${category_id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/category/update/${category_id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

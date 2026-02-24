@@ -25,7 +25,7 @@ export default function Comments() {
       data,
       loading,
       error,
-    } = useFetch(`http://localhost:3000/api/comment/get-all-comment`, {
+    } = useFetch(`${import.meta.env.VITE_API_BASE_URL}/comment/get-all-comment`, {
       method: "GET",
       credentials: "include",
     },[refresh]);
@@ -33,7 +33,7 @@ export default function Comments() {
     console.log("comments",data)
 
     const handleDelete=async(id)=>{
-      const response = await deleteData(`http://localhost:3000/api/comment/delete/${id}`)
+      const response = await deleteData(`${import.meta.env.VITE_API_BASE_URL}/comment/delete/${id}`)
       if(response){
         setRefresh(!refresh)
         Showtoast("success","Data deleted")

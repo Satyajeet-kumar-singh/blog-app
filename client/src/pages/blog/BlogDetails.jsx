@@ -27,7 +27,7 @@ export default function BlogDetails() {
     loading,
     error,
   } = useFetch(
-    `http://localhost:3000/api/blog/get-all`,
+    `${import.meta.env.VITE_API_BASE_URL}/blog/get-all`,
     {
       method: "GET",
       credentials: "include",
@@ -37,7 +37,7 @@ export default function BlogDetails() {
 
   const handleDelete = (id) => {
     const response = deleteData(
-      `http://localhost:3000/api/blog/delete/${id}`
+      `${import.meta.env.VITE_API_BASE_URL}/blog/delete/${id}`
     );
     if (response) {
       setRefresh(!refresh);
