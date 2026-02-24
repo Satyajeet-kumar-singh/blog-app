@@ -1,9 +1,8 @@
 import React from "react";
-import { Button } from "./components/ui/button";
 import Layout from "./Layout/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from "./pages/Index";
-import SignIn from "./pages/Signin";
+import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import CategoryDetails from "./pages/category/CategoryDetails";
