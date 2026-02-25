@@ -3,7 +3,7 @@ import { handleError } from "../helpers/HandleError.js"
 
 export const onlyAdmin=async(req,res,next)=>{
     try {
-        const token = req.cookie.access_token
+        const token = req.cookies.access_token
         if(!token){
             return next(handleError(403,"unauthorized"))
         }

@@ -42,6 +42,7 @@ export default function AddCategory() {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/category/add`, {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },

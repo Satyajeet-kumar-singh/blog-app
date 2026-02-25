@@ -64,6 +64,7 @@ export default function EditCategory() {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/category/update/${category_id}`, {
         method: "PUT",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },
